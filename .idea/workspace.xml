@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="101b544b-26a6-4963-934c-f6f0743292bd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bdwvi1ocAJKPnMSDqIshabIY6k" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/token.pickle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DThom\Desktop\PycharmProjects\Taggabox_Software" />
+      <recent name="C:\Users\DThom\Desktop\PycharmProjects\untitled" />
+      <recent name="C:\Users\DThom\Desktop\PycharmProjects\untitled\venv\Lib\site-packages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DThom\Desktop\PycharmProjects\untitled" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.calendar_update">
+    <configuration name="Taggabox_GUI" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DThom\Desktop\PycharmProjects\Taggabox_Software\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Taggabox_GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="untitled" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DThom\PycharmProjects\def_practice\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="calendar_update" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DThom\Desktop\PycharmProjects\Taggabox_Software\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calendar_update.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="xml_example" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="untitled" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\DThom\Desktop\PycharmProjects\untitled\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xml_example.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.calendar_update" />
+      <item itemvalue="Python.Taggabox_GUI" />
+      <item itemvalue="Python.xml_example" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="101b544b-26a6-4963-934c-f6f0743292bd" name="Default Changelist" comment="" />
+      <created>1588975510496</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588975510496</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Inspections" timestamp="1594952990819">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1594952990819" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595909646281">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1595909646281" />
+    <state x="459" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595985536124">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="459" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1595985536124" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1595299857643">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1595299857643" />
+    <state x="2017" y="170" key="FileChooserDialogImpl" timestamp="1597272823618">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2017" y="170" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597272823618" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1596684004512" />
+    <state width="1470" height="263" key="GridCell.Tab.0.bottom" timestamp="1597511407807">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1470" height="263" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597511407807" />
+    <state width="1345" height="218" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597103194679" />
+    <state width="1470" height="263" key="GridCell.Tab.0.center" timestamp="1597511407807">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1470" height="263" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597511407807" />
+    <state width="1345" height="218" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597103194679" />
+    <state width="1470" height="263" key="GridCell.Tab.0.left" timestamp="1597511407807">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1470" height="263" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597511407807" />
+    <state width="1345" height="218" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597103194679" />
+    <state width="1470" height="263" key="GridCell.Tab.0.right" timestamp="1597511407807">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1470" height="263" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597511407807" />
+    <state width="1345" height="218" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597103194679" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1595909731311">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1595909731311" />
+    <state x="380" y="0" width="607" height="728" key="find.popup" timestamp="1595909781650">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="380" y="0" width="607" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1595909781650" />
+    <state x="1852" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1597198645909">
+      <screen x="1366" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1852" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597198645909" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1597103167564" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bs4/bs4/__init__.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
