@@ -13,8 +13,6 @@ from google.auth.transport.requests import Request
 import pkg_resources.py2_warn
 
 
-
-
 class Customer:
     def __init__(self, first=None, last=None, phone=None, email=None, delivery_address=None,
                  pickup_address=None, amount_paid=0):
@@ -120,7 +118,6 @@ Pick Up Date: {self.pickup_datetime}
         conn.close()
 
 
-
 def get_customer():
     global current_customer
 
@@ -160,28 +157,29 @@ def get_order():
 
     # THIS LOCATES THE RENTAL PERIOD AND CREATES PICKUP DATETIME OBJECT
     rental_period = current_order['line_items'][0]['meta_data'][0]['value']
-    if rental_period == '1 Week':
+    if rental_period == '1 Week' or '1 week':
         pickup_datetime = delivery_datetime + timedelta(days=7)
         rental_period = '1 Week'
-    elif rental_period == '2 Weeks':
+    elif rental_period == '2 Weeks' or '2 weeks':
         pickup_datetime = delivery_datetime + timedelta(days=14)
         rental_period = '2 Weeks'
-    elif rental_period == '3 Weeks':
+    elif rental_period == '3 Weeks' or '3 weeks':
         pickup_datetime = delivery_datetime + timedelta(days=21)
         rental_period = '3 Weeks'
-    elif rental_period == '4 Weeks':
+    elif rental_period == '4 Weeks' or '4 weeks':
         pickup_datetime = delivery_datetime + timedelta(days=28)
         rental_period = '4 Weeks'
 
     # THIS LOCATES WOO-COMMERCE PRODUCT ID AND CREATES BOX PACKAGE ACCORDINGLY
     # SETS VALUES FOR LG BOXES, XL BOXES, ETC
-    if current_order['line_items'][0]['product_id'] == 1515:
+    if current_order['line_items'][0]['product_id'] == 1270:
         lg_boxes = 70
         xl_boxes = 10
         lg_dollies = 4
         xl_dollies = 2
         labels = 80
         zip_ties = 80
+        bins = 0
     elif current_order['line_items'][0]['product_id'] == 1515:
         lg_boxes = 50
         xl_boxes = 10
@@ -189,6 +187,7 @@ def get_order():
         xl_dollies = 1
         labels = 60
         zip_ties = 60
+        bins = 0
     elif current_order['line_items'][0]['product_id'] == 1510:
         lg_boxes = 35
         xl_boxes = 5
@@ -196,6 +195,7 @@ def get_order():
         xl_dollies = 0
         labels = 40
         zip_ties = 40
+        bins = 0
     elif current_order['line_items'][0]['product_id'] == 1505:
         lg_boxes = 18
         xl_boxes = 2
@@ -203,6 +203,7 @@ def get_order():
         xl_dollies = 0
         labels = 20
         zip_ties = 20
+        bins = 0
     elif current_order['line_items'][0]['product_id'] == 1545:
         lg_boxes = 1
         xl_boxes = 0
@@ -210,12 +211,21 @@ def get_order():
         xl_dollies = 0
         labels = 0
         zip_ties = 0
+        bins = 0
+    elif current_order['line_items'][0]['product_id'] == 1291:
+        lg_boxes = 0
+        xl_boxes = 0
+        lg_dollies = 0
+        xl_dollies = 0
+        labels = 0
+        zip_ties = 0
+        bins = current_order['line_items'][0]['quantity']
 
     delivery_datetime = delivery_datetime.strftime('%Y-%m-%dT%H:%M:%S-04:00')
     pickup_datetime = pickup_datetime.strftime('%Y-%m-%dT%H:%M:%S-04:00')
 
     c_order = RentalOrder(order_num, lg_boxes=lg_boxes, xl_boxes=xl_boxes, lg_dollies=lg_dollies,
-                          xl_dollies=xl_dollies, labels=labels, zip_ties=zip_ties,
+                          xl_dollies=xl_dollies, labels=labels, zip_ties=zip_ties, bins=bins,
                           rental_period=rental_period, delivery_date=delivery_date,
                           delivery_datetime=delivery_datetime, pickup_datetime=pickup_datetime)
 
@@ -255,13 +265,14 @@ def post_events():
         'location': f'{current_customer.delivery_address}',
         'description': f'''{current_customer.fullname}
 phone: {current_customer.phone}
-address {current_customer.delivery_address}
+address: {current_customer.delivery_address}
 email: {current_customer.email}
 {c_order.lg_boxes} Lg Boxes
 {c_order.xl_boxes} Xl Boxes
 {c_order.lg_dollies} Dollies
 {c_order.xl_dollies} Xl Dollies
-{c_order.labels} Labels & Zip Ties''',
+{c_order.labels} Labels & Zip Ties
+{c_order.bins} Bins''',
 
         'start': {
             'dateTime': f'{c_order.delivery_datetime}',
@@ -297,7 +308,8 @@ email: {current_customer.email}
 {c_order.xl_boxes} Xl Boxes
 {c_order.lg_dollies} Dollies
 {c_order.xl_dollies} Xl Dollies
-{c_order.labels} Labels & Zip Ties''',
+{c_order.labels} Labels & Zip Ties
+{c_order.bins} Bins''',
 
         'start': {
             'dateTime': f'{c_order.pickup_datetime}',
@@ -339,7 +351,7 @@ wcapi = API(
 
 # COLLECT ORDER DATA
 orders = wcapi.get('orders')
-data = json.loads(json.dumps(orders.json(), indent=3))
+data = orders.json()
 
 new_order = True
 
@@ -357,7 +369,8 @@ while new_order:
             break
         else:
             save_order(last_order, 'latest_order.pkl')
-            # post_events()
+            post_events()
+
 
 
 

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="101b544b-26a6-4963-934c-f6f0743292bd" name="Default Changelist" comment="" />
+    <list default="true" id="101b544b-26a6-4963-934c-f6f0743292bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calendar_update.py" beforeDir="false" afterPath="$PROJECT_DIR$/calendar_update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latest_order.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/latest_order.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/token.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/token.pickle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +19,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1bdwvi1ocAJKPnMSDqIshabIY6k" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,7 +31,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HANGMAN" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/token.pickle" />
@@ -142,10 +151,6 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="22" key="#Inspections" timestamp="1594952990819">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="22" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1594952990819" />
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595909646281">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -158,30 +163,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1595299857643" />
-    <state x="2017" y="170" key="FileChooserDialogImpl" timestamp="1597272823618">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603934635381">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="2017" y="170" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597658492751" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1603934635381" />
+    <state width="1470" height="263" key="GridCell.Tab.0.bottom" timestamp="1597658499062">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state x="2017" y="170" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597272823618" />
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1596684004512" />
-    <state width="1470" height="263" key="GridCell.Tab.0.bottom" timestamp="1597511407807">
-      <screen x="1366" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1470" height="263" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597511407807" />
+    <state width="1470" height="263" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597658499062" />
     <state width="1345" height="218" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597103194679" />
-    <state width="1470" height="263" key="GridCell.Tab.0.center" timestamp="1597511407807">
+    <state width="1470" height="263" key="GridCell.Tab.0.center" timestamp="1597658499061">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state width="1470" height="263" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597511407807" />
+    <state width="1470" height="263" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597658499061" />
     <state width="1345" height="218" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597103194679" />
-    <state width="1470" height="263" key="GridCell.Tab.0.left" timestamp="1597511407807">
+    <state width="1470" height="263" key="GridCell.Tab.0.left" timestamp="1597658499061">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state width="1470" height="263" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597511407807" />
+    <state width="1470" height="263" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597658499061" />
     <state width="1345" height="218" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597103194679" />
-    <state width="1470" height="263" key="GridCell.Tab.0.right" timestamp="1597511407807">
+    <state width="1470" height="263" key="GridCell.Tab.0.right" timestamp="1597658499062">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
-    <state width="1470" height="263" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597511407807" />
+    <state width="1470" height="263" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1597658499061" />
     <state width="1345" height="218" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597103194679" />
     <state x="184" y="6" key="SettingsEditor" timestamp="1595909731311">
       <screen x="0" y="0" width="1366" height="728" />
