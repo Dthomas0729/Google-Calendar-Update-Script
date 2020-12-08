@@ -126,14 +126,19 @@ def get_customer():
     l_name = current_order['billing']['last_name']
     phone = current_order['billing']['phone']
     email = current_order['billing']['email']
-    delivery_address = current_order['meta_data'][2]['value']
+    address_1 = current_order['shipping']['address_1']
+    address_2 = current_order['shipping']['address_2']
+    city = current_order['shipping']['city']
+    state = current_order['shipping']['state']
+    postcode = current_order['shipping']['postcode']
+    delivery_address = f'{address_1} {address_2}, {city}, {state} {postcode}'
     pickup_address = current_order['meta_data'][4]['value']
 
     current_customer = Customer(first=f_name, last=l_name, phone=phone, email=email,
                                 delivery_address=delivery_address, pickup_address=pickup_address)
 
     #current_customer.save()
-    print(current_order)
+    print(json.dumps(current_order, indent=4))
     print(current_customer)
 
 
@@ -360,6 +365,7 @@ while new_order:
     current_customer = Customer()
     c_order = RentalOrder('', '')
     last_order = data[0]
+
     get_customer()
     get_order()
 
