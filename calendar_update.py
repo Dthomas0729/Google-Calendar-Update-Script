@@ -1,16 +1,14 @@
 from __future__ import print_function
-import tkinter
 from woocommerce import API
 import json
 import datetime
 from datetime import datetime, timedelta
 import pickle
 import sqlite3
-import os.path
+import os
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-import pkg_resources.py2_warn
 
 
 class Customer:
@@ -137,7 +135,7 @@ def get_customer():
     current_customer = Customer(first=f_name, last=l_name, phone=phone, email=email,
                                 delivery_address=delivery_address, pickup_address=pickup_address)
 
-    #current_customer.save()
+    # current_customer.save()
     print(json.dumps(current_order, indent=4))
     print(current_customer)
 
@@ -161,70 +159,88 @@ def get_order():
     delivery_date = delivery_date.date()
 
     # THIS LOCATES THE RENTAL PERIOD AND CREATES PICKUP DATETIME OBJECT
-    rental_period = current_order['line_items'][0]['meta_data'][0]['value']
-    if rental_period == '1 Week' or '1 week':
+    try:
+        rental_period = int(current_order['line_items'][0]['meta_data'][0]['value'][0])
+        if rental_period == 1:
+            pickup_datetime = delivery_datetime + timedelta(days=7)
+            rental_period = '1 Week'
+        elif rental_period == 2:
+            pickup_datetime = delivery_datetime + timedelta(days=14)
+            rental_period = '2 Weeks'
+        elif rental_period == 3:
+            pickup_datetime = delivery_datetime + timedelta(days=21)
+            rental_period = '3 Weeks'
+        elif rental_period == 4:
+            pickup_datetime = delivery_datetime + timedelta(days=28)
+            rental_period = '4 Weeks'
+    except IndexError:
         pickup_datetime = delivery_datetime + timedelta(days=7)
         rental_period = '1 Week'
-    elif rental_period == '2 Weeks' or '2 weeks':
-        pickup_datetime = delivery_datetime + timedelta(days=14)
-        rental_period = '2 Weeks'
-    elif rental_period == '3 Weeks' or '3 weeks':
-        pickup_datetime = delivery_datetime + timedelta(days=21)
-        rental_period = '3 Weeks'
-    elif rental_period == '4 Weeks' or '4 weeks':
-        pickup_datetime = delivery_datetime + timedelta(days=28)
-        rental_period = '4 Weeks'
 
     # THIS LOCATES WOO-COMMERCE PRODUCT ID AND CREATES BOX PACKAGE ACCORDINGLY
     # SETS VALUES FOR LG BOXES, XL BOXES, ETC
-    if current_order['line_items'][0]['product_id'] == 1270:
-        lg_boxes = 70
-        xl_boxes = 10
-        lg_dollies = 4
-        xl_dollies = 2
-        labels = 80
-        zip_ties = 80
-        bins = 0
-    elif current_order['line_items'][0]['product_id'] == 1515:
-        lg_boxes = 50
-        xl_boxes = 10
-        lg_dollies = 3
-        xl_dollies = 1
-        labels = 60
-        zip_ties = 60
-        bins = 0
-    elif current_order['line_items'][0]['product_id'] == 1510:
-        lg_boxes = 35
-        xl_boxes = 5
-        lg_dollies = 2
-        xl_dollies = 0
-        labels = 40
-        zip_ties = 40
-        bins = 0
-    elif current_order['line_items'][0]['product_id'] == 1505:
-        lg_boxes = 18
-        xl_boxes = 2
-        lg_dollies = 1
-        xl_dollies = 0
-        labels = 20
-        zip_ties = 20
-        bins = 0
-    elif current_order['line_items'][0]['product_id'] == 1545:
-        lg_boxes = 1
-        xl_boxes = 0
-        lg_dollies = 0
-        xl_dollies = 0
-        labels = 0
-        zip_ties = 0
-        bins = 0
-    elif current_order['line_items'][0]['product_id'] == 1291:
-        lg_boxes = 0
-        xl_boxes = 0
-        lg_dollies = 0
-        xl_dollies = 0
-        labels = 0
-        zip_ties = 0
-        bins = current_order['line_items'][0]['quantity']
+    for x in range(len(current_order['line_items'])):
+        if current_order['line_items'][x]['product_id'] == 1270:
+            lg_boxes = 70
+            xl_boxes = 10
+            lg_dollies = 4
+            xl_dollies = 2
+            labels = 80
+            zip_ties = 80
+            bins = 0
+            break
+        elif current_order['line_items'][x]['product_id'] == 1515:
+            lg_boxes = 50
+            xl_boxes = 10
+            lg_dollies = 3
+            xl_dollies = 1
+            labels = 60
+            zip_ties = 60
+            bins = 0
+            break
+        elif current_order['line_items'][x]['product_id'] == 1510:
+            lg_boxes = 35
+            xl_boxes = 5
+            lg_dollies = 2
+            xl_dollies = 0
+            labels = 40
+            zip_ties = 40
+            bins = 0
+        elif current_order['line_items'][x]['product_id'] == 1505:
+            lg_boxes = 18
+            xl_boxes = 2
+            lg_dollies = 1
+            xl_dollies = 0
+            labels = 20
+            zip_ties = 20
+            bins = 0
+            break
+        elif current_order['line_items'][x]['product_id'] == 1545:
+            lg_boxes = 1
+            xl_boxes = 0
+            lg_dollies = 0
+            xl_dollies = 0
+            labels = 0
+            zip_ties = 0
+            bins = 0
+            break
+        elif current_order['line_items'][x]['product_id'] == 1291:
+            lg_boxes = 0
+            xl_boxes = 0
+            lg_dollies = 0
+            xl_dollies = 0
+            labels = 0
+            zip_ties = 0
+            bins = current_order['line_items'][x]['quantity']
+            break
+        else:
+            lg_boxes = 0
+            xl_boxes = 0
+            lg_dollies = 0
+            xl_dollies = 0
+            labels = 0
+            zip_ties = 0
+            bins = 0
 
     delivery_datetime = delivery_datetime.strftime('%Y-%m-%dT%H:%M:%S-04:00')
     pickup_datetime = pickup_datetime.strftime('%Y-%m-%dT%H:%M:%S-04:00')
@@ -333,10 +349,8 @@ email: {current_customer.email}
         },
     }
     pickup_event = service.events().insert(calendarId='primary', body=pickup_event).execute()
-    print('Events created: %s' % (event.get('htmlLink')))
-
-    global new_order
-    new_order = False
+    print('Delivery Event created: %s' % (event.get('htmlLink')))
+    print('Pick-up Event created: %s' % (pickup_event.get('htmlLink')))
 
 
 def save_order(obj, filename):
@@ -348,36 +362,34 @@ SCOPES = ['https://www.googleapis.com/auth/calendar']
 
 # WOO-COMMERCE API CREDENTIALS
 wcapi = API(
-    url="https://taggaboxmoving.com",
-    consumer_key="ck_0a900a48cc070cb1b59ea65a5baca52ed1420a2a",
-    consumer_secret="cs_b1cea84a2d95c7d2ebfcdff62e97bed06546d93d",
+    url=os.environ.get('WCAPI_URL'),
+    consumer_key=os.environ.get('WCAPI_CONSUMER_KEY'),
+    consumer_secret=os.environ.get('WCAPI_CONSUMER_SECRET'),
     version="wc/v3"
 )
 
 # COLLECT ORDER DATA
 orders = wcapi.get('orders')
 data = orders.json()
-
+last_order = data[0]
 new_order = True
 
-while new_order:
 
-    current_customer = Customer()
-    c_order = RentalOrder('', '')
-    last_order = data[0]
+def main():
 
-    get_customer()
-    get_order()
+    while new_order:
 
-    with open('latest_order.pkl', 'rb') as o:
-        if last_order == pickle.load(o):
-            print('no recent orders to update')
-            break
-        else:
-            save_order(last_order, 'latest_order.pkl')
-            post_events()
-
+        get_customer()
+        get_order()
+        with open('latest_order.pkl', 'rb') as o:
+            if last_order == pickle.load(o):
+                print('no recent orders to update')
+                break
+            else:
+                save_order(last_order, 'latest_order.pkl')
+                # post_events()
+                break
 
 
-
-
+if __name__ == '__main__':
+    main()
