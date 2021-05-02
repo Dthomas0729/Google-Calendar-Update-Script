@@ -2,3 +2,4 @@ credentials.json
 latest_order.pkl
 token.pickle
 .idea
+venv
