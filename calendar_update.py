@@ -406,7 +406,7 @@ wcapi = API(
 # COLLECT ORDER DATA
 orders = wcapi.get('orders')
 data = orders.json()
-last_order = data[0]
+last_order = data[7]
 new_order = True
 
 
