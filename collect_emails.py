@@ -2,7 +2,7 @@
 
 from woocommerce import API
 import json
-import openpyxl
+from openpyxl import Workbook, load_workbook
 import os
 
 #1. First I need to connect to woocommerce API
@@ -31,9 +31,25 @@ def list_emails():
             emails_dict[name] = email
          #   print(f'{name}: {email}')
         if len(orders) <= 0:
-            return print(count) 
+            return emails_dict
 
-    print(emails_dict.values())
-    return print(count)       
+    return emails_dict      
 
-list_emails()
+# CREATE EXCEL WORKBOOK
+def create_workbook():
+    # emails = list_emails()
+    wb = load_workbook('customer-email-list.xlsx')
+    ws = wb.active
+    print(ws)
+
+    ws['A2'].value = 'Mick Jagger'
+
+    filename = 'customer-email-list.xlsx'
+
+    # key_list = emails.keys()
+    # for row in range(1, len(key_list)):
+    #     ws.append(emails[row])
+    
+    wb.save(filename)
+
+create_workbook()
