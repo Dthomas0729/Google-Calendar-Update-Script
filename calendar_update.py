@@ -393,23 +393,6 @@ def save_order(obj, filename):
         pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL)
 
 
-SCOPES = ['https://www.googleapis.com/auth/calendar']
-
-# WOO-COMMERCE API CREDENTIALS
-wcapi = API(
-    url=os.environ.get('WCAPI_URL'),
-    consumer_key=os.environ.get('WCAPI_CONSUMER_KEY'),
-    consumer_secret=os.environ.get('WCAPI_CONSUMER_SECRET'),
-    version="wc/v3"
-)
-
-# COLLECT ORDER DATA
-orders = wcapi.get('orders')
-data = orders.json()
-last_order = data[7]
-new_order = True
-
-
 def write_workbook(order, customer):
     filename = f"{customer.first} {customer.last}{order.invoice}.xlsx"
 
@@ -443,6 +426,21 @@ def write_workbook(order, customer):
     wb.save(filename)
     return wb
 
+SCOPES = ['https://www.googleapis.com/auth/calendar']
+
+# WOO-COMMERCE API CREDENTIALS
+wcapi = API(
+    url=os.environ.get('WCAPI_URL'),
+    consumer_key=os.environ.get('WCAPI_CONSUMER_KEY'),
+    consumer_secret=os.environ.get('WCAPI_CONSUMER_SECRET'),
+    version="wc/v3"
+)
+
+# COLLECT ORDER DATA
+orders = wcapi.get('orders')
+data = orders.json()
+last_order = data[0]
+new_order = True
 
 def main():
 
