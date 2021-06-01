@@ -3,6 +3,9 @@
 from woocommerce import API
 import json
 from openpyxl import Workbook, load_workbook
+from openpyxl.utils import get_column_letter
+from openpyxl.styles import Font
+
 import os
 
 #1. First I need to connect to woocommerce API
@@ -37,19 +40,20 @@ def list_emails():
 
 # CREATE EXCEL WORKBOOK
 def create_workbook():
-    # emails = list_emails()
-    wb = load_workbook('customer-email-list.xlsx')
+    data = list_emails()
+    wb = Workbook()
     ws = wb.active
-    print(ws)
+    ws.title = "Email List"
 
-    ws['A2'].value = 'Mick Jagger'
+    headings = ['Name', 'Email']
+    ws.append(headings)
 
-    filename = 'customer-email-list.xlsx'
+    filename = 'email-list.xlsx'
 
-    # key_list = emails.keys()
-    # for row in range(1, len(key_list)):
-    #     ws.append(emails[row])
-    
+    for person in data:
+        email = data[person]
+        ws.append([person] + [email])
+
     wb.save(filename)
 
 create_workbook()
