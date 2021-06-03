@@ -29,7 +29,7 @@ def list_emails():
         orders = wcapi.get('orders', params={'per_page': 100, 'page':num}).json()
         for i in orders:
             count += 1
-            name = i['billing']['first_name'] + i['billing']['last_name']
+            name = i['billing']['first_name'] + " " + i['billing']['last_name']
             email = i['billing']['email']
             emails_dict[name] = email
          #   print(f'{name}: {email}')
